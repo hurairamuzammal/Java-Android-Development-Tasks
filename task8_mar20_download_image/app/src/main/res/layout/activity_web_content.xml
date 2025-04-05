@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="80dp"
+    tools:context=".WebContentActivity">
+
+
+    <!-- EditText to display the downloaded web content -->
+    <Button
+
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Download Web Content"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/tbtMulltiLineWeb"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:gravity="top"
+        android:textSize="16sp"
+        android:background="@android:drawable/edit_text"
+        android:hint="Web content will appear here..."/>
+
+
+</LinearLayout>

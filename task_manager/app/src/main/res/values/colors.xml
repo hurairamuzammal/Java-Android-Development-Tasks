@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Theme Colors -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="nav_background">#121212</color> <!-- Dark background -->
+    <color name="nav_item_color">#DCBCE6</color> <!-- White text/icons -->
+    <color name="nav_item_color_selected">#B94DC5</color>
+    <color name="purple">#B94DC5</color> <!-- Teal for selected item -->
+</resources>

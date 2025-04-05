@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="192dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="111dp"
+        android:text="Request Camera permission"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="192dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="110dp"
+        android:text="Request Location permission"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="TextSizeCheck" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="192dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="354dp"
+        android:text="Request Internet permission"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.163"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="218dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="222dp"
+        android:text="Request External storage permission"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        tools:ignore="TextSizeCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
