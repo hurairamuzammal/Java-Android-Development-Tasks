@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
+        requestStoragePermission();
         db_class db = new db_class(this, "MYDATABASE", null, 1);
         SQLiteDatabase database = db.getReadableDatabase(); // Forces the database to open
         Log.d("DB_CHECK", "Database opened successfully!");

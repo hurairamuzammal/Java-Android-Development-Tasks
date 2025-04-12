@@ -120,8 +120,7 @@ ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},
     // Handle the user's response to permissions
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode,
-                permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode,uhuhuh permissions, grantResults);
         switch (requestCode) {
             case CAMERA_PERMISSION_REQUEST_CODE:
                 if (grantResults.length > 0 &&
