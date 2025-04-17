@@ -58,8 +58,8 @@ public class MusicServices extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Notification notification = new NotificationCompat.Builder(this, "music_channel_id")
-                .setContentTitle("Playing Music")
-                .setContentText("Your tune is playing in the background.")
+                .setContentTitle("My Application")
+                .setContentText("App is Ringing")
                 .setSmallIcon(R.drawable.ic_launcher_foreground)  // Must be a valid icon
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .build();

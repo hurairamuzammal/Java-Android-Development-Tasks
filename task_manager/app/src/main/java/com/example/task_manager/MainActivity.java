@@ -45,16 +45,21 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase database = db.getReadableDatabase(); // Forces the database to open
         Log.d("DB_CHECK", "Database opened successfully!");
 
+
         Cursor cursor2 = db.getAllTasks();
         while (cursor2.moveToNext()) {
             String taskDate = cursor2.getString(cursor2.getColumnIndexOrThrow("date"));
             String taskTime = cursor2.getString(cursor2.getColumnIndexOrThrow("time"));
+            String taskTitle = cursor2.getString(cursor2.getColumnIndexOrThrow("title"));
+            String taskDescription = cursor2.getString(cursor2.getColumnIndexOrThrow("description"));
 
             // Check if task is due now
             if (isTaskDueNow(taskDate, taskTime)) {
                 Intent serviceIntent = new Intent(MainActivity.this, Notification.class);
+                serviceIntent.putExtra("task_title", taskTitle);
+                serviceIntent.putExtra("task_description", taskDescription);
+                serviceIntent.putExtra("task_time", taskTime);
                 startService(serviceIntent);
-
             }
         }
         cursor2.close();
