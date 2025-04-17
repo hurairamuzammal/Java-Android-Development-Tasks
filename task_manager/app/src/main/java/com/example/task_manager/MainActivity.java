@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase database = db.getReadableDatabase(); // Forces the database to open
         Log.d("DB_CHECK", "Database opened successfully!");
 
-
         Cursor cursor2 = db.getAllTasks();
         while (cursor2.moveToNext()) {
             String taskDate = cursor2.getString(cursor2.getColumnIndexOrThrow("date"));
