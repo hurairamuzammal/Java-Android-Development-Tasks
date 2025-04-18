@@ -33,22 +33,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadImage() {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.execute(() -> {
-            try {
-                URL url = new URL("https://muslimmemo.com/wp-content/uploads/2016/06/islamic-quote-umar-patience.png");
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                connection.setDoInput(true);
-                connection.connect();
-                InputStream input = connection.getInputStream();
-                Bitmap bitmap = BitmapFactory.decodeStream(input);
-
-                // Update UI on main thread
-                requireActivity().runOnUiThread(() -> imageView.setImageBitmap(bitmap));
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        String imageUrl = "https://muslimmemo.com/wp-content/uploads/2016/06/islamic-quote-umar-patience.png";
+        new imageDownload(imageView).execute(imageUrl);
     }
+
 }
