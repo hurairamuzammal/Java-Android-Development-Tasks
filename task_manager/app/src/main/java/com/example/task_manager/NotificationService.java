@@ -1,5 +1,6 @@
 package com.example.task_manager;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -16,9 +17,11 @@ public class NotificationService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+
         createNotificationChannel();
     }
 
+    @SuppressLint("ForegroundServiceType")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         String title = intent.getStringExtra("task_title");
@@ -44,7 +47,10 @@ public class NotificationService extends Service {
                 .setAutoCancel(true)
                 .build();
 
-        NotificationManager manager = getSystemService(NotificationManager.class);
+        NotificationManager manager = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            manager = getSystemService(NotificationManager.class);
+        }
         if (manager != null) {
             manager.notify((int) System.currentTimeMillis(), taskNotification);
         }

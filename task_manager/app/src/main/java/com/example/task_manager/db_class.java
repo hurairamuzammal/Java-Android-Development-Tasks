@@ -84,6 +84,7 @@ public class db_class extends SQLiteOpenHelper {
 
         insertSampleTasks(db);
 
+
     }
 
     private void insertSampleTasks(SQLiteDatabase db) {
@@ -157,6 +158,7 @@ public class db_class extends SQLiteOpenHelper {
             Log.d("DB_INSERT", "Sample tasks already exist. Skipping insertion.");
 
         }
+
 
     }
 
@@ -253,6 +255,7 @@ public class db_class extends SQLiteOpenHelper {
         db.close();
 
     }
+
 
     @Override
 

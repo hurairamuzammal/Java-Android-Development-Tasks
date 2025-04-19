@@ -68,5 +68,9 @@ public class TaskListFragment extends Fragment {
                 .replace(R.id.frameLayout, taskDetailsFragment)
                 .addToBackStack(null)
                 .commit();
+
+
     }
+
+
 }
