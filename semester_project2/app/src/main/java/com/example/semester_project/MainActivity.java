@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // Buttons
         buttonModel1 = findViewById(R.id.buttonModel1);
         buttonModel2 = findViewById(R.id.buttonModel2);
-        buttonModel3 = findViewById(R.id.buttonModel3);
-        buttonModel4 = findViewById(R.id.buttonModel4);
+
 
         // TextureView for video background
         backgroundTextureView = findViewById(R.id.textureView);
@@ -54,16 +53,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonModel2.setOnClickListener(v -> {
-            // TODO: Add your second model activity
+            Intent intent = new Intent(MainActivity.this, qr_scanner.class);
+            startActivity(intent);
         });
 
-        buttonModel3.setOnClickListener(v -> {
-            // TODO: Add your third model activity
-        });
 
-        buttonModel4.setOnClickListener(v -> {
-            // TODO: Add your fourth model activity
-        });
     }
 
     private void playVideo(Surface surface) {

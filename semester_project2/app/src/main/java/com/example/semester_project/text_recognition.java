@@ -91,11 +91,7 @@ public class text_recognition extends AppCompatActivity {
         }
     }
 
-    //    public Bitmap flipBitmapHorizontally(Bitmap original) {
-//        Matrix matrix = new Matrix();
-//        matrix.preScale(1.0f, -1.0f); // Horizontal flip
-//        return Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
-//    }
+
     private Bitmap rotateBitmap(Bitmap bitmap, int orientation) {
         Matrix matrix = new Matrix();
         switch (orientation) {
@@ -127,12 +123,12 @@ public class text_recognition extends AppCompatActivity {
                 Bitmap rotatedBitmap = rotateBitmap(bitmap, orientation);
                 imageView.setImageBitmap(rotatedBitmap);
                 finalBitmap = rotatedBitmap;
-                recognizeText(rotatedBitmap);  // 👈 call OCR after rotating
+                recognizeText(rotatedBitmap);
 
 
             } catch (IOException e) {
                 e.printStackTrace();
-                textView.setText("Error loading image ❌");
+                textView.setText("Error loading image!");
             }
         }
     }
@@ -148,7 +144,7 @@ public class text_recognition extends AppCompatActivity {
                     button2.setVisibility(VISIBLE);  // Show copy button
                 })
                 .addOnFailureListener(e -> {
-                    textView.setText("OCR failed ❌");
+                    textView.setText("OCR failed!");
                 });
 
 //            button2 is copy button pressing on that copy the text to clipboard

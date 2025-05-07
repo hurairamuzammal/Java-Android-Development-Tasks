@@ -20,6 +20,12 @@
         android:theme="@style/Theme.Semester_project"
         tools:targetApi="31">
         <activity
+            android:name=".web_activity"
+            android:exported="false" />
+        <activity
+            android:name=".qr_scanner"
+            android:exported="false" />
+        <activity
             android:name=".text_recognition"
             android:exported="false" />
         <activity
