@@ -154,9 +154,9 @@ public class text_recognition extends AppCompatActivity {
                 android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
                 android.content.ClipData clip = android.content.ClipData.newPlainText("OCR Text", text);
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(text_recognition.this, "Text copied to clipboard ✅", Toast.LENGTH_SHORT).show();
+                Toast.makeText(text_recognition.this, "Text copied to clipboard", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(text_recognition.this, "No text to copy ⚠️", Toast.LENGTH_SHORT).show();
+                Toast.makeText(text_recognition.this, "No text to copy ", Toast.LENGTH_SHORT).show();
             }
         });
 
