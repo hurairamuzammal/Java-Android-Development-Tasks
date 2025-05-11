@@ -57,7 +57,7 @@ public class qr_scanner extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_CAMERA);
         }
-
+        resultTextView.setText("Point your camera to barcode or QR");
         cameraExecutor = Executors.newSingleThreadExecutor();
     }
 

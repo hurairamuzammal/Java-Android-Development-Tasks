@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextureView backgroundTextureView;
     private MediaPlayer mediaPlayer;
 
-    Button buttonModel1, buttonModel2, buttonModel3, buttonModel4;
+    Button buttonModel1, buttonModel2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
             float scaledHeight = scale * videoHeight;
             float dx = (backgroundTextureView.getWidth() - scaledWidth) / 2;
             float dy = (backgroundTextureView.getHeight() - scaledHeight) / 2;
-
             Matrix matrix = new Matrix();
             matrix.setScale(scale, scale);
+
             matrix.postTranslate(dx, dy);
             backgroundTextureView.setTransform(matrix);
         });
