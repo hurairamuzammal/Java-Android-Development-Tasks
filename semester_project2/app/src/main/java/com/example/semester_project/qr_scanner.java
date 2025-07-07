@@ -4,7 +4,9 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.media.Image;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Size;
@@ -41,6 +43,8 @@ public class qr_scanner extends AppCompatActivity {
     private PreviewView previewView;
     private TextView resultTextView;
 
+    private String lastScannedValue = "";
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,7 @@ public class qr_scanner extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_CAMERA);
         }
+
         resultTextView.setText("Point your camera to barcode or QR");
         cameraExecutor = Executors.newSingleThreadExecutor();
     }
@@ -94,14 +99,24 @@ public class qr_scanner extends AppCompatActivity {
                                 .addOnSuccessListener(barcodes -> {
                                     for (Barcode barcode : barcodes) {
                                         String rawValue = barcode.getRawValue();
-                                        runOnUiThread(() -> {
-                                            resultTextView.setText(rawValue);
-                                            resultTextView.setOnClickListener(v -> {
-                                                Intent intent = new Intent(qr_scanner.this, web_activity.class);
-                                                intent.putExtra("url", rawValue);
-                                                startActivity(intent);
+
+
+                                        if (rawValue != null && !rawValue.equals(lastScannedValue)) {
+                                            lastScannedValue = rawValue;
+
+                                            // Beep tone
+                                            ToneGenerator toneGen = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+                                            toneGen.startTone(ToneGenerator.TONE_PROP_BEEP2, 200);
+
+                                            runOnUiThread(() -> {
+                                                resultTextView.setText(rawValue);
+                                                resultTextView.setOnClickListener(v -> {
+                                                    Intent intent = new Intent(qr_scanner.this, web_activity.class);
+                                                    intent.putExtra("url", rawValue);
+                                                    startActivity(intent);
+                                                });
                                             });
-                                        });
+                                        }
                                     }
                                 })
                                 .addOnFailureListener(e ->
